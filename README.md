@@ -45,5 +45,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: dist/Web/wwwroot
+```
 
-´´´
+Inside the Repo Settings > Actions > General in the Workflow permissions category, allow Read and Write permissions.
