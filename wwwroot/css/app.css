@@ -103,3 +103,9 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.jumbotron-a {
+    background: #875424;
+    max-width: 800px;
+    border-radius: 10px;
+}
