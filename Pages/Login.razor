@@ -3,13 +3,6 @@
 <PageTitle>Iniciar Sesión | Cirsa</PageTitle>
 
 
-<style>
-
-
-
-</style>
-
-
 <div class="container py-4 jumbotron-a">
 
 
@@ -25,11 +18,10 @@
 
             <div class="col-12 col-md-6">
 
-                <form>
+                <form class="user-form">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
                         <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
@@ -39,7 +31,7 @@
                         <input type="checkbox" class="form-check-input" id="rememberUserCheck">
                         <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Continuar</button>
+                    <button type="submit" class="btn button-gold-a">Continuar</button>
                 </form>
 
             </div>
@@ -55,7 +47,7 @@
 
 
 @code {
-    private int currentCount = 0;
+    public int currentCount = 0;
 
     private void IncrementCount()
     {
