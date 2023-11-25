@@ -109,3 +109,13 @@ code {
     max-width: 800px;
     border-radius: 10px;
 }
+
+.user-form {
+    background-color: #1A171B;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.button-gold-a {
+    background: #D4A52D;
+}
