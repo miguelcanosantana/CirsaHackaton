@@ -31,7 +31,7 @@
                         <input @bind-value="password" @bind-value:event="oninput" type="password" class="form-control" id="passwordInput">
                     </div>
                     <div class="mb-3 form-check">
-                        <input value="@isRememberingUser" @onclick="ToggleRemember" type="checkbox" class="form-check-input" id="rememberUserCheck">
+                        <input @bind="isRememberingUser" type="checkbox" class="form-check-input" id="rememberUserCheck">
                         <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
                     </div>
                     <button type="submit" class="btn button-gold-a">Continuar</button>
@@ -58,12 +58,6 @@
 @code {
     private String email = "";
     private String password = "";
-
-    private bool isRememberingUser = false;
-
-    private void ToggleRemember()
-    {
-        isRememberingUser = !isRememberingUser;
-    }
+    private bool isRememberingUser = true;
 }
 
