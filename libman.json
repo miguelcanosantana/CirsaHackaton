@@ -51,6 +51,10 @@
         "js/bootstrap.min.js",
         "js/bootstrap.min.js.map"
       ]
+    },
+    {
+      "library": "bootstrap-icons@1.11.2",
+      "destination": "wwwroot/bootstrap-icons/"
     }
   ]
 }
