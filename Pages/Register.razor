@@ -1,8 +1,7 @@
 ﻿<!-- Bindings explained: https://stackoverflow.com/questions/58221915/difference-between-bind-and-bind-value -->
+@page "/register"
 
-@page "/login"
-
-<PageTitle>Iniciar Sesión | Cirsa</PageTitle>
+<PageTitle>Registrarse | Cirsa</PageTitle>
 
 
 <div class="container py-4 jumbotron-a">
@@ -12,15 +11,25 @@
         <div class="row">
 
             <div class="col-12 col-md-6">
-                <h1 class="display-5 fw-bold">Iniciar Sesión </h1>
+                <h1 class="display-5 fw-bold">Registrarse </h1>
                 <p>
-                    Inicia sesión para acceder al panel administrativo.
+                    Regístrate como nuevo usuario para acceder al panel administrativo.
                 </p>
             </div>
 
             <div class="col-12 col-md-6">
 
                 <form class="user-form">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                        <input @bind-value="name" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Apellido/s</label>
+                        <input @bind-value="surnames" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                    </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -47,8 +56,9 @@
 
 
 @code {
+    private String name = "";
+    private String surnames = "";
     private String email = "";
     private String password = "";
     private bool isRememberingUser = false;
 }
-
