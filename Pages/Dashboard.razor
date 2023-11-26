@@ -10,45 +10,19 @@
     .non-resizable-text-area {
         resize: none;
     }
+
+    .preview-image {
+        margin-top: 15px;
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 10px;
+    }
 </style>
 
 
 <div class="container py-2">
 
-    <div class="row">
-
-        <!-- Affiliate Link -->
-        <div class="col-12 col-xl-6">
-            <div class="container py-4 jumbotron-a">
-
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-12 col-md-4">
-                            <h3 class="fw-bold">Compartir</h3>
-                            <p>
-                                Compárte tu página de afiliado con los clientes a través del siguiente enlace.
-                            </p>
-                        </div>
-
-                        <div class="col-12 col-md-8">
-
-                            <form class="user-form">
-
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Link de afiliado</label>
-                                    <textarea value="@GetAbsoluteUri()" class="form-control non-resizable-text-area" rows="3" readonly></textarea>
-                                </div>
-
-                            </form>
-
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <div class="row gy-4">
 
         <!-- Affiliate text -->
         <div class="col-12 col-xl-6">
@@ -98,7 +72,7 @@
                         <div class="col-12 col-md-4">
                             <h3 class="fw-bold"> Imágenes </h3>
                             <p>
-                                Añade imágenes para captar la atención del cliente. <br/>
+                                Añade imágenes para captar la atención del cliente. <br />
                                 El fondo de la página debe de ser un tile (un trozo de un patrón que se repita)
                             </p>
                         </div>
@@ -108,13 +82,48 @@
                             <form class="user-form">
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Título</label>
-                                    <input @bind-value="customTitle" @bind-value:event="oninput" class="form-control">
+                                    <label for="exampleInputEmail1" class="form-label">Imagen Avatar</label>
+                                    <input @bind-value="customAvatar" @bind-value:event="oninput" class="form-control">
+                                    <img class="preview-image" src="@customAvatar"/>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Descripción</label>
-                                    <textarea @bind-value="customDescription" @bind-value:event="oninput" rows="10" class="form-control non-resizable-text-area"></textarea>
+                                    <label for="exampleInputEmail1" class="form-label">Fondo Tilleable</label>
+                                    <input @bind-value="customBackground" @bind-value:event="oninput" class="form-control">
+                                    <img class="preview-image" src="@customBackground" />
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Affiliate Link -->
+        <div class="col-12 col-xl-6">
+            <div class="container py-4 jumbotron-a">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 col-md-4">
+                            <h3 class="fw-bold">Compartir</h3>
+                            <p>
+                                Compárte tu página de afiliado con los clientes a través del siguiente enlace.
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <form class="user-form">
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Link de afiliado</label>
+                                    <textarea value="@GetAbsoluteUri()" class="form-control non-resizable-text-area" rows="3" readonly></textarea>
                                 </div>
 
                             </form>
@@ -137,6 +146,8 @@
     private AffiliateStyle? customStyle;
     private String customTitle = "";
     private String customDescription = "";
+    private String customAvatar = "";
+    private String customBackground = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -152,6 +163,8 @@
         {
             customTitle = customStyle.GetTitle();
             customDescription = customStyle.GetSummary();
+            customAvatar = customStyle.GetAvatarUrl();
+            customBackground = customStyle.GetBackgroundUrl();
         }
     }
 
