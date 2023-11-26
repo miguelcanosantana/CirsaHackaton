@@ -9,11 +9,26 @@ namespace CirsaHackaton.Services
         private User? loggedUser;
 
 
+        //Initialization
+        public void InitializeDummyDB()
+        {
+            User testUser = new User(
+                "Testing",
+                "Tests",
+                "testuser@example.com",
+                "1234"
+            );
+
+            dummyUsersDatabase.Add(testUser);
+        }
+
+
         //Getters
         public List<User> GetUsers() { return dummyUsersDatabase; }
         public User? GetLoggedUser() { return loggedUser; }
         public User? GetUserById(String uid) { return dummyUsersDatabase.Find(user => user.GetId().Equals(uid)); }
         public User? GetUserByMail(String mail) { return dummyUsersDatabase.Find(user => user.GetMail().Equals(mail)); }
+
 
         //Profile functions
         public Tuple<bool, String> TryRegisterUser(User user)
