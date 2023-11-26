@@ -1,4 +1,6 @@
 ﻿<!-- Bindings explained: https://stackoverflow.com/questions/58221915/difference-between-bind-and-bind-value -->
+@inject Services.UserService UserService
+@inject NavigationManager NavigationManager
 @page "/register"
 
 <PageTitle>Registrarse | Cirsa</PageTitle>
@@ -23,12 +25,12 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                        <input @bind-value="name" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                        <input @bind-value="name" @bind-value:event="oninput" class="form-control" id="nameInput" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Apellido/s</label>
-                        <input @bind-value="surnames" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                        <input @bind-value="surnames" @bind-value:event="oninput" class="form-control" id="surnamesInput" required>
                     </div>
 
                     <div class="mb-3">
@@ -43,7 +45,7 @@
                         <input @bind="isRememberingUser" type="checkbox" class="form-check-input" id="rememberUserCheck">
                         <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
                     </div>
-                    <button type="submit" class="btn button-gold-a">Continuar</button>
+                    <button type="submit" @onclick="TryRegister" class="btn button-gold-a">Continuar</button>
 
                 </form>
 
@@ -61,4 +63,22 @@
     private String email = "";
     private String password = "";
     private bool isRememberingUser = false;
+
+
+    private void TryRegister()
+    {
+        User newUser = new User(
+            name,
+            surnames,
+            email,
+            password
+        );
+
+        var result = UserService.TryRegisterUser(newUser);
+
+        if (result.Item1 == true)
+        {
+            NavigationManager.NavigateTo("weather");
+        }
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace CirsaHackaton.Model
+﻿namespace CirsaHackaton
 {
     public class User
     {
@@ -20,5 +20,7 @@
         //Getters
         public String GetId() { return id; }
         public String GetMail() { return email; }
+
+        public String GetPassword() { return password; }
     }
 }
