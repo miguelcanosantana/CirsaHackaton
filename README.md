@@ -47,4 +47,7 @@ jobs:
         FOLDER: dist/Web/wwwroot
 ```
 
-Inside the Repo Settings > Actions > General in the Workflow permissions category, allow Read and Write permissions.
+🚦 Inside the Repo Settings > Actions > General in the Workflow permissions category, allow Read and Write permissions.
+
+🗒️ This repo has 2 branches, the main one, and the gh-pages, created automatically by the action. 
+The page content is only generated with those files in the second branch.
