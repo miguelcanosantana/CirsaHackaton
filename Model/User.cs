@@ -19,5 +19,6 @@
 
         //Getters
         public String GetId() { return id; }
+        public String GetMail() { return email; }
     }
 }
