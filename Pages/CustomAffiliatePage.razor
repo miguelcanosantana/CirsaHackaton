@@ -5,47 +5,72 @@
 <PageTitle>PLACEHOLDER TITLE | Cirsa</PageTitle>
 
 
-<div class="container py-4 jumbotron-a">
+<style>
 
-    <div class="container">
-        <div class="row">
+    #everything-wrapper {
+        vertical-align: central;
+        background-image: url(@customStyle.GetBackgroundUrl());
+        height: 100vh;
+        width: 100vw;
+    }
 
-            <div class="col-12 col-md-6">
+    #grey-wrapper {
+        background-color: #1a171b;
+        padding: 25px;
+        border-radius: 10px;
+    }
 
-                <!-- Description still loading -->
-                @if(customStyle == null)
-                {
-                    <p>Loading...</p>
-                }
-                //Loaded description
-                else
-                {
-                    <h4 class="fw-bold"> @customStyle.GetTitle() </h4>
-                    <p>
-                        @customStyle.GetSummary()
-                    </p>
-                }
+</style>
 
-            </div>
+<div id="everything-wrapper">
 
-            <div class="col-12 col-md-6">
+    <div class="container py-4 jumbotron-b">
 
-                <form class="user-form">
+        <div class="container">
+            <div class="row">
 
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input @bind-value="clientMail" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                <div class="col-12 col-md-6">
+
+                    <div id="grey-wrapper">
+                        <!-- Description still loading -->
+                        @if (customStyle == null)
+                        {
+                            <p>Loading...</p>
+                        }
+                        //Loaded description
+                        else
+                        {
+                            <h4 class="fw-bold"> @customStyle.GetTitle() </h4>
+                            <p>
+                                @customStyle.GetSummary()
+                            </p>
+                        }
                     </div>
-                    <button type="submit" @onclick="RegisterClient" class="btn button-gold-a">Continuar</button>
 
-                </form>
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <form class="user-form">
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input @bind-value="clientMail" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                        </div>
+                        <button type="submit" @onclick="RegisterClient" class="btn button-gold-a">Continuar</button>
+
+                    </form>
+
+                </div>
 
             </div>
-
         </div>
+
     </div>
 
 </div>
+
+
 
 
 @code {
