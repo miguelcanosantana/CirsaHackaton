@@ -1,4 +1,7 @@
-﻿<style>
+﻿@inject Services.UserService UserService
+
+
+<style>
 
     .navbar {
         background: #f3ecce;
@@ -42,24 +45,30 @@
                     </NavLink>
                 </li>
 
-                <li class="nav-item">
+				<!-- Null user navbar -->
+                @if(UserService.GetLoggedUser() == null)
+                {
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="counter">
+                            Crear Cuenta de Afiliado
+                        </NavLink>
+                    </li>
 
-                    <NavLink class="nav-link" href="counter">
-                        Crear Cuenta de Afiliado
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="login">
-                        Iniciar Sesión
-                    </NavLink>
-                </li>
-
-                <li class="nav-item">
-                    <NavLink class="nav-link" href="weather">
-                        Panel Administrativo
-                    </NavLink>
-                </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="login">
+                            Iniciar Sesión
+                        </NavLink>
+                    </li>
+                }
+                //Logged user navbar
+                else
+                {
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="weather">
+                            Panel Administrativo
+                        </NavLink>
+                    </li>
+                }
 
             </ul>
         </div>
