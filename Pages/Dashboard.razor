@@ -13,11 +13,11 @@
 </style>
 
 
-<div class="container">
+<div class="container py-2">
 
     <div class="row">
 
-        <!-- Affiliate description and Link -->
+        <!-- Affiliate Link -->
         <div class="col-12 col-xl-6">
             <div class="container py-4 jumbotron-a">
 
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <!-- Affiliate page settings -->
+        <!-- Affiliate text -->
         <div class="col-12 col-xl-6">
             <div class="container py-4 jumbotron-a">
 
@@ -88,12 +88,47 @@
             </div>
         </div>
 
+        <!-- Affiliate images -->
+        <div class="col-12 col-xl-6">
+            <div class="container py-4 jumbotron-a">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 col-md-4">
+                            <h3 class="fw-bold"> Imágenes </h3>
+                            <p>
+                                Añade imágenes para captar la atención del cliente. <br/>
+                                El fondo de la página debe de ser un tile (un trozo de un patrón que se repita)
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <form class="user-form">
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Título</label>
+                                    <input @bind-value="customTitle" @bind-value:event="oninput" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Descripción</label>
+                                    <textarea @bind-value="customDescription" @bind-value:event="oninput" rows="10" class="form-control non-resizable-text-area"></textarea>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
-
-
-
-
 
 
 
