@@ -50,9 +50,12 @@
     private String GetAbsoluteUri()
     {
         //Detect if it's from localhost or online, change the uri depending of that
+        String baseUri = NavigationManager.BaseUri.ToString();
 
+        if (baseUri.Contains("github.io"))
+            baseUri += "CirsaHackaton/";
 
-        return NavigationManager.BaseUri.ToString() + "aff/" + @UserService.GetLoggedUser().GetId();
+        return baseUri + "aff/" + @UserService.GetLoggedUser().GetId();
         //return NavigationManager.ToAbsoluteUri("/aff/").ToString() + @UserService.GetLoggedUser().GetId();
     }
 }
