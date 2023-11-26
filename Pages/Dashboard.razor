@@ -1,8 +1,18 @@
 ﻿@page "/dashboard"
+@inject Services.UserService UserService
 @inject HttpClient Http
 
 <PageTitle>Panel Administrativo | Cirsa</PageTitle>
 
+
+@if (UserService.GetLoggedUser() == null)
+{
+    <h1> Loading... </h1>
+}
+else
+{
+    <h1> @UserService.GetLoggedUser().GetId() </h1>
+}
 
 <h1>Weather</h1>
 

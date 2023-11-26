@@ -1,0 +1,73 @@
+﻿@inject Services.UserService UserService
+@inject NavigationManager NavigationManager
+@page "/aff/{affiliateUid}"
+
+<PageTitle>PLACEHOLDER TITLE | Cirsa</PageTitle>
+
+
+<div class="container py-4 jumbotron-a">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-6">
+
+                <!-- Description still loading -->
+                @if(customStyle == null)
+                {
+                    <h1>Loading...</h1>
+                }
+                //Loaded description
+                else
+                {
+                    <h1 class="display-5 fw-bold"> @customStyle.GetTitle() </h1>
+                    <p>
+                        Inicia sesión como afiliado para acceder al panel administrativo.
+                    </p>
+                }
+
+            </div>
+
+            <div class="col-12 col-md-6">
+
+                <form class="user-form">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input @bind-value="clientMail" @bind-value:event="oninput" type="email" class="form-control" id="emailInput" required>
+                    </div>
+                    <button type="submit" @onclick="RegisterClient" class="btn button-gold-a">Continuar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+@code {
+    [Parameter]
+    public string affiliateUid { get; set; }
+
+    private AffiliateStyle? customStyle;
+    private String clientMail = "";
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        SetCustomStyle();
+    }
+
+    private void SetCustomStyle()
+    {
+        customStyle = UserService.GetAffiliateStyle(affiliateUid);
+    }
+
+    private void RegisterClient()
+    {
+        
+    }
+}

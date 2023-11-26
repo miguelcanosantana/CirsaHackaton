@@ -1,4 +1,4 @@
-﻿namespace CirsaHackaton.Model
+﻿namespace CirsaHackaton
 {
     public class AffiliateStyle
     {
@@ -23,5 +23,9 @@
         //Getters
         public String GetId() { return id; }
         public String GetAffiliateUid() { return affiliateUid; }
+        public String GetTitle() { return title; }
+        public String GetSummary() { return summary; }
+        public String GetBackgroundUrl() {  return backgroundUrl; }
+        public String GetAvatarUrl() {  return avatarUrl; }
     }
 }

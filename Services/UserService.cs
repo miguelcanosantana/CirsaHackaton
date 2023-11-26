@@ -1,4 +1,4 @@
-﻿using CirsaHackaton.Model;
+﻿using CirsaHackaton;
 using Microsoft.AspNetCore.Components.Routing;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
@@ -49,6 +49,7 @@ namespace CirsaHackaton.Services
         public User? GetLoggedUser() { return loggedUser; }
         public User? GetUserById(String uid) { return dummyUsersDatabase.Find(user => user.GetId().Equals(uid)); }
         public User? GetUserByMail(String mail) { return dummyUsersDatabase.Find(user => user.GetMail().Equals(mail)); }
+        public AffiliateStyle? GetAffiliateStyle(String affiliateUid) { return dummyStylesDatabase.Find(style => style.GetAffiliateUid().Equals(affiliateUid)); }
 
 
         //Profile functions
