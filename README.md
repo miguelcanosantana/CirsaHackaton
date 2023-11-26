@@ -3,6 +3,11 @@
 ## 🌐 Website
 https://miguelcanosantana.github.io/CirsaHackaton/
 
+###### Data is not saved when reloading or closing the page as this is a local app.
+There is a test user with some example data precharged:
+- User: TestUser
+- Password: 1234
+
 ## 🚀 How to Deploy 
 This turorial has been used to deploy the site to github pages. [Tutorial](https://ilovedotnet.org/blogs/blazor-wasm-publishing-to-github-pages/)
 
