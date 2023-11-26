@@ -13,18 +13,16 @@
             <div class="col-12 col-md-6">
 
                 <!-- Description still loading -->
-                <h1>@affiliateUid</h1>
-
                 @if(customStyle == null)
                 {
-                    <h1>Loading...</h1>
+                    <p>Loading...</p>
                 }
                 //Loaded description
                 else
                 {
-                    <h1 class="display-5 fw-bold"> @customStyle.GetTitle() </h1>
+                    <h4 class="fw-bold"> @customStyle.GetTitle() </h4>
                     <p>
-                        Inicia sesión como afiliado para acceder al panel administrativo.
+                        @customStyle.GetSummary()
                     </p>
                 }
 

@@ -29,15 +29,16 @@ namespace CirsaHackaton.Services
 
             AffiliateStyle testStyle = new AffiliateStyle(
                 testUser.GetId(),
-            "🪅🎉🎈Bienvenido Meow!🎈🎉🪅",
-            "Regístrate con tu correo para obtener las siguientes ventajas!" +
-            "\n\n" +
-            "Cat ipsum dolor sit amet, panther so bombay yet cornish rex and turkish angora." +
-            "Lynx siberian for mouser abyssinian or british shorthair, " +
-            "or devonshire rex.Tiger tomcat norwegian forest so lion bobcat and siberian." +
-            "Tiger birman but leopard.Mouser siberian cheetah ocicat yet jaguar but donskoy." +
-            "Kitten cheetah so birman singapura.Siberian maine coon and cougar kitty.Tomcat tom.",
-            "https://img.freepik.com/premium-vector/funny-cute-cats-seamless-pattern-childish-animal-white-repeat-background-simple-pets-ornament-wallpaper-wrapping-paper-modern-trendy-hand-drawn-vector-illustration-flat-cartoon-style_318237-342.jpg?w=826",
+                @$"🪅🎉Bienvenido Meow!🎉🪅",
+                $@"Regístrate con tu correo para obtener las siguientes ventajas!
+
+                Cat ipsum dolor sit amet, panther so bombay yet cornish rex and turkish angora.
+                Lynx siberian for mouser abyssinian or british shorthair,
+                or devonshire rex.Tiger tomcat norwegian forest so lion bobcat and siberian.
+
+                Tiger birman but leopard.Mouser siberian cheetah ocicat yet jaguar but donskoy.
+                Kitten cheetah so birman singapura.Siberian maine coon and cougar kitty.Tomcat tom.",
+                "https://img.freepik.com/premium-vector/funny-cute-cats-seamless-pattern-childish-animal-white-repeat-background-simple-pets-ornament-wallpaper-wrapping-paper-modern-trendy-hand-drawn-vector-illustration-flat-cartoon-style_318237-342.jpg?w=826",
                 "https://images.unsplash.com/photo-1602779717364-d044d7492ed7?q=80&w=2154&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             );
 
