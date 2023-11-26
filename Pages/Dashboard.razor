@@ -1,5 +1,6 @@
 ﻿@page "/dashboard"
 @inject Services.UserService UserService
+@inject NavigationManager NavigationManager
 @inject HttpClient Http
 
 <PageTitle>Panel Administrativo | Cirsa</PageTitle>
@@ -24,7 +25,7 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Link de afiliado</label>
-                        <input value="@UserService.GetLoggedUser().GetId()" class="form-control" id="nameInput" readonly>
+                        <input value="@NavigationManager.ToAbsoluteUri("/dashboard/aff/")@UserService.GetLoggedUser().GetId()" class="form-control" id="nameInput" readonly>
                     </div>
 
                 </form>
