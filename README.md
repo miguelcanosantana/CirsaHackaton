@@ -5,7 +5,7 @@ https://miguelcanosantana.github.io/CirsaHackaton/
 
 ###### Data is not saved when reloading or closing the page as this is a local app.
 There is a test user with some example data precharged:
-- User: TestUser
+- User: testuser@example.com
 - Password: 1234
 
 ## 🚀 How to Deploy 
