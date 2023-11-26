@@ -6,6 +6,13 @@
 <PageTitle>Panel Administrativo | Cirsa</PageTitle>
 
 
+<style>
+    #uri-text-area {
+        resize: none;
+    }
+</style>
+
+
 <div class="container py-4 jumbotron-a">
 
 
@@ -25,7 +32,7 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Link de afiliado</label>
-                        <input value="@GetAbsoluteUri()" class="form-control" id="nameInput" readonly>
+                        <textarea id="uri-text-area" value="@GetAbsoluteUri()" class="form-control" rows="2" readonly></textarea>
                     </div>
 
                 </form>
@@ -40,11 +47,8 @@
 
 @code {
 
-    private String absoluteUri = "";
-
-
     private String GetAbsoluteUri()
     {
-        return NavigationManager.ToAbsoluteUri("/dashboard/aff/").ToString() + @UserService.GetLoggedUser().GetId();
+        return NavigationManager.ToAbsoluteUri("/aff/").ToString() + @UserService.GetLoggedUser().GetId();
     }
 }
