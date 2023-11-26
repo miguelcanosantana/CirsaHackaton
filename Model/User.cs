@@ -19,8 +19,9 @@
 
         //Getters
         public String GetId() { return id; }
+        public String GetName() { return name; }
+        public String GetSurnames() { return surnames; }
         public String GetMail() { return email; }
-
         public String GetPassword() { return password; }
     }
 }
