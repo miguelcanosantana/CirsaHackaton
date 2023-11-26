@@ -16,7 +16,7 @@ namespace CirsaHackaton.Services
                 "Testing",
                 "Tests",
                 "testuser@example.com",
-                "1234"
+                "123456789"
             );
 
             dummyUsersDatabase.Add(testUser);
