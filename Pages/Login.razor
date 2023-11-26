@@ -1,5 +1,6 @@
 ﻿<!-- Bindings explained: https://stackoverflow.com/questions/58221915/difference-between-bind-and-bind-value -->
-
+@inject Services.UserService UserService
+@inject NavigationManager NavigationManager
 @page "/login"
 
 <PageTitle>Iniciar Sesión | Cirsa</PageTitle>
@@ -34,7 +35,7 @@
                         <input @bind="isRememberingUser" type="checkbox" class="form-check-input" id="rememberUserCheck">
                         <label class="form-check-label" for="exampleCheck1">Recordar usuario</label>
                     </div>
-                    <button class="btn button-gold-a">Continuar</button>
+                    <button type="submit" @onclick="TryLogin" class="btn button-gold-a">Continuar</button>
 
                 </form>
 
@@ -50,5 +51,17 @@
     private String email = "";
     private String password = "";
     private bool isRememberingUser = false;
+
+
+    private void TryLogin()
+    {
+
+        var result = UserService.TryLoginUser(email, password);
+
+        if (result.Item1 == true)
+        {
+            NavigationManager.NavigateTo("weather");
+        }
+    }
 }
 

@@ -48,18 +48,27 @@ namespace CirsaHackaton.Services
             return new Tuple<bool, string>(true, "Registro completado!");
         }
 
-        public Tuple<bool, String> TryLoginUser(User user) {
+        public Tuple<bool, String> TryLoginUser(String mail, String password) {
 
-            User? retrievedUser = GetUserByMail(user.GetMail());
+            if (String.IsNullOrEmpty(mail))
+                return new Tuple<bool, string>(false, "Ha ocurrido un error: No se ha proporcionado ningún correo electrónico");
+
+            User? retrievedUser = GetUserByMail(mail);
 
             if (retrievedUser == null)
                 return new Tuple<bool, string>(false, "Ha ocurrido un error: No existe ningún usuario con este correo");
 
-            if (!user.GetPassword().Equals(retrievedUser.GetPassword()))
+            if (String.IsNullOrEmpty(password))
+                return new Tuple<bool, string>(false, "Ha ocurrido un error: No se ha proporcionado ninguna contraseña");
+
+            if (password.Length < 8)
+                return new Tuple<bool, string>(false, "Ha ocurrido un error: La contraseña debe de tener al menos 8 caracteres");
+
+            if (!password.Equals(retrievedUser.GetPassword()))
                 return new Tuple<bool, string>(false, "Ha ocurrido un error: La contraseña es incorrecta");
 
             //Log user when success
-            loggedUser = user;
+            loggedUser = retrievedUser;
 
             return new Tuple<bool, string>(true, "Sesión iniciada!");
         }
