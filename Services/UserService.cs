@@ -29,7 +29,7 @@ namespace CirsaHackaton.Services
 
             AffiliateStyle testStyle = new AffiliateStyle(
                 testUser.GetId(),
-            "🪅 🎉🎈Bienvenido Meow!🎈🎉 🪅",
+            "🪅🎉🎈Bienvenido Meow!🎈🎉🪅",
             "Regístrate con tu correo para obtener las siguientes ventajas!" +
             "\n\n" +
             "Cat ipsum dolor sit amet, panther so bombay yet cornish rex and turkish angora." +
