@@ -18,6 +18,7 @@ namespace CirsaHackaton.Services
         public void InitializeDummyDB()
         {
             User testUser = new User(
+                "c432ff01-b4ef-4490-b376-0abdc98e8f3f000",
                 "Testing",
                 "Tests",
                 "testuser@example.com",

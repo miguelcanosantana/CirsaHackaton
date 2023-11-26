@@ -17,6 +17,15 @@
             this.password = password;
         }
 
+        public User(String id, String name, String surnames, String email, String password)
+        {
+            this.id = id;
+            this.name = name;
+            this.surnames = surnames;
+            this.email = email;
+            this.password = password;
+        }
+
         //Getters
         public String GetId() { return id; }
         public String GetName() { return name; }
