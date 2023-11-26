@@ -55,7 +55,6 @@
         if (baseUri.Contains("github.io"))
             baseUri += "CirsaHackaton/";
 
-        return baseUri + "aff/" + @UserService.GetLoggedUser().GetId();
-        //return NavigationManager.ToAbsoluteUri("/aff/").ToString() + @UserService.GetLoggedUser().GetId();
+        return baseUri + "aff/" + UserService.GetLoggedUser().GetId();
     }
 }
