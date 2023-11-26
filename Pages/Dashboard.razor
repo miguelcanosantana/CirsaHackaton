@@ -32,7 +32,7 @@
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Link de afiliado</label>
-                        <textarea id="uri-text-area" value="@GetAbsoluteUri()" class="form-control" rows="2" readonly></textarea>
+                        <textarea id="uri-text-area" value="@GetAbsoluteUri()" class="form-control" rows="3" readonly></textarea>
                     </div>
 
                 </form>
@@ -49,6 +49,10 @@
 
     private String GetAbsoluteUri()
     {
-        return NavigationManager.ToAbsoluteUri("/aff/").ToString() + @UserService.GetLoggedUser().GetId();
+        //Detect if it's from localhost or online, change the uri depending of that
+
+
+        return NavigationManager.BaseUri.ToString() + "aff/" + @UserService.GetLoggedUser().GetId();
+        //return NavigationManager.ToAbsoluteUri("/aff/").ToString() + @UserService.GetLoggedUser().GetId();
     }
 }
