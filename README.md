@@ -37,9 +37,6 @@ Default customer invitation.
 - [Bootstrap V5.3](https://getbootstrap.com/docs/5.3)
 - [Net Core](https://dotnet.microsoft.com/es-es/download)
 
-## 🦄 Taken decisions
-
-
 ## 🚀 How to Deploy 
 This turorial has been used to deploy the site to github pages. [Tutorial](https://ilovedotnet.org/blogs/blazor-wasm-publishing-to-github-pages/)
 
@@ -88,3 +85,29 @@ jobs:
 
 🗒️ This repo has 2 branches, the main one, and the gh-pages, created automatically by the action. 
 The page content is only generated with those files in the second branch.
+
+## 🦄 Taken decisions
+### 📆 First day
+It was my first project ever using *Blazor*.
+So my first decision and when I got stuck for the most time was uploading the project to github pages.
+When I finally did, I started looking for documentation of the project as a total newbie to this framework 💁🏻‍♂️
+
+
+Here are some of the links I've fund helpful under my entire development:
+- https://ilovedotnet.org/blogs/blazor-wasm-publishing-to-github-pages/
+- https://www.youtube.com/watch?v=aKYLx-YOPAg
+- https://www.youtube.com/watch?v=4G_BzLxa9Nw
+- https://www.youtube.com/watch?v=VDkiB5F7FH0
+- https://learn.microsoft.com/en-us/answers/questions/1189167/blazor-visual-studio-sample-template-missing-boots
+- https://github.com/martinmogusu/blazor-top-navbar
+- https://stackoverflow.com/questions/58221915/difference-between-bind-and-bind-value
+- https://wellsb.com/csharp/aspnet/blazor-singleton-pass-data-between-pages
+- https://subscription.packtpub.com/book/web-development/9781800567511/2/ch02lvl1sec12/routing-in-blazor-webassembly
+- https://stackoverflow.com/questions/59518988/disable-layout-for-page-under-blazor
+
+Having some of previous experiences in *Ionic* and *Angular* I've found some behaviours are really similar, so I decided to make a Service architecture.
+
+A Singleton service for getting user's info is inyected in each page and component that needs it.
+
+### 📆 Second/Third day
+Having lost a lot of time the first day figuring out how everything worked, the second and third day were faster.
