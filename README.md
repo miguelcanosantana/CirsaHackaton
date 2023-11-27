@@ -32,6 +32,13 @@ When registering or loging succesfully, you will be redirected to the dashboard 
 ![Referral](./wwwroot/Images/005.png)
 Default customer invitation.
 
+## 💻 Technologies used
+- [Blazor (WebAssembly)](https://dotnet.microsoft.com/es-es/apps/aspnet/web-apps/blazor)
+- [Bootstrap V5.3](https://getbootstrap.com/docs/5.3)
+- [Net Core](https://dotnet.microsoft.com/es-es/download)
+
+## 🦄 Taken decisions
+
 
 ## 🚀 How to Deploy 
 This turorial has been used to deploy the site to github pages. [Tutorial](https://ilovedotnet.org/blogs/blazor-wasm-publishing-to-github-pages/)
