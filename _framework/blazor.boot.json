@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CirsaHackaton",
   "resources": {
-    "hash": "sha256-c9DzRTKTF58+rXF2zAJ6/sBGi4tMN5wYFRYlyl4Pw78=",
+    "hash": "sha256-Mj3537uYVaUg7oPuMufkT7eI2J0OySaSAIoSNwSIZkI=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.2q2rhlx3py.js": "sha256-8su0dfqXmrR6nSS80nF/thphOx+y1Myj7Zbp7+5wV3Y="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "CirsaHackaton.wasm": "sha256-XsvixJVS6hkbHgpFnDQPDqHa5wOZ5KRadGS8pyFHizQ=",
+      "CirsaHackaton.wasm": "sha256-3/DaNvEwjK7UrwKvEGT9ZyrAiktsVUFj10F9eTAeees=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-PwJYZ4RMfwR18HmRWkAHe2d4NTE+erCmH5JICMM6faw=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-ivj7kxN8rrhTm1UV0H7dhsOewu6rhATFU2ZAG/YKLvA=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-Ws5szf6fWPAXna+XyWsAhavx+WDFcA/91DQ7iPRPCMs=",
