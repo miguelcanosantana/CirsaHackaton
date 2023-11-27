@@ -136,6 +136,40 @@
             </div>
         </div>
 
+        <!-- Save changes -->
+        <div class="col-12 col-xl-6">
+            <div class="container py-4 jumbotron-a">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 col-md-4">
+                            <h3 class="fw-bold">Guardar</h3>
+                            <p>
+                                Guarda los cambios realizados.
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-8">
+
+                            <div class="mb-3">
+                                <button @onclick="() => NavigationManager.NavigateTo(GetAbsoluteUri())" class="btn btn-outline-light">
+                                    Ver invitación
+                                </button>
+
+                                <button @onclick="() => SaveCurrentStyle()" class="btn button-gold-a">
+                                    Guardar estilo
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -152,6 +186,17 @@
     protected override async Task OnInitializedAsync()
     {
         SetCustomStyle();
+    }
+
+    private void SaveCurrentStyle()
+    {
+        UserService.SaveStyle(
+            UserService.GetLoggedUser().GetId(),
+            customTitle,
+            customDescription,
+            customBackground,
+            customAvatar
+        );
     }
 
     private void SetCustomStyle()

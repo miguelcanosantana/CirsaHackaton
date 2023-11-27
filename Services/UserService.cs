@@ -86,7 +86,6 @@ namespace CirsaHackaton.Services
 
             return new Tuple<bool, string>(true, "Registro completado!");
         }
-
         public Tuple<bool, String> TryLoginUser(String mail, String password) {
 
             if (String.IsNullOrEmpty(mail))
@@ -110,6 +109,24 @@ namespace CirsaHackaton.Services
             loggedUser = retrievedUser;
 
             return new Tuple<bool, string>(true, "Sesión iniciada!");
+        }
+
+        //Styles functions
+        public void SaveStyle(String uid, String title, String summary, String backgroundUrl, String avatarUrl)
+        {
+            AffiliateStyle newStyle = new AffiliateStyle(
+                uid, title, summary, backgroundUrl, avatarUrl
+            );
+
+            //If already exists, replace, if not, create
+            int index = dummyStylesDatabase.FindIndex(style => style.GetAffiliateUid() == uid);
+
+            //Does not exist
+            if (index == -1)
+                dummyStylesDatabase.Add(newStyle);
+            //Else replace
+            else
+                dummyStylesDatabase[index] = newStyle;
         }
 
 
