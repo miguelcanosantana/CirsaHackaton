@@ -120,23 +120,16 @@ The most interesting thing about blazor is that a Singleton doesn't seem to foll
 
 ### 📆 Second/Third day
 Having lost a lot of time the first day figuring out how everything worked, the second and third day were faster 🏎️
-The most difficult thing was creating an Uri having a path, because on localhost and deployment versions would behave differently. Finally made it with this code:
+The most difficult thing was creating an Uri having a path, because on localhost and deployment versions would behave differently. Finally made it with this short code:
 
 ```
 private String GetAbsoluteUri()
 {
-    //Detect if it's from localhost or online, change the uri depending of that
     String baseUri = NavigationManager.BaseUri.ToString();
-
-    if (baseUri.Contains("github.io"))
-        baseUri += "CirsaHackaton/";
-
     return baseUri + "aff/" + UserService.GetLoggedUser().GetId();
 }
 
 ```
-That code gets path, and if it's from github adds the repo name, that was missing from the default bahaviour.
-
 
 The final thing was improving a bit the styles, I fought a lot with *Bootstrap* 🤺 and some code bugs.
 Also writing this readme 🖍️
